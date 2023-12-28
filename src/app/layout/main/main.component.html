@@ -1,0 +1,13 @@
+<section class="container">
+  <app-nav></app-nav>
+
+  <ng-container *ngIf="loadingService.loading$ | async">
+    <div class="overlay"></div>
+    
+    <app-loading></app-loading>
+  </ng-container>
+
+  <router-outlet></router-outlet>
+
+  <app-footer></app-footer>
+</section>

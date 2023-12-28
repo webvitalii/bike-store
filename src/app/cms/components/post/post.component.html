@@ -1,0 +1,13 @@
+<section *ngIf="post$ | async as post">
+  <div class="post">
+    <h1>{{ post.title }}</h1>
+
+    <div class="post-meta">
+      <strong>{{ post.date | date: 'medium' }}</strong>
+    </div>
+
+    <div class="post-content">
+      {{ post.text }}
+    </div>
+  </div>
+</section>
