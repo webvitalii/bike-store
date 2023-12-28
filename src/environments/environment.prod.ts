@@ -2,13 +2,13 @@ export const environment = {
   production: true,
   appVersion: require('../../package.json').version,
   firebaseConfig: {
-    apiKey: 'AIzaSyDYBz74b_nfQYQEg0kOQwAyfcHtPKkwhgo',
-    authDomain: 'angular-expo.firebaseapp.com',
-    databaseURL: 'https://angular-expo.firebaseio.com',
-    projectId: 'angular-expo',
-    storageBucket: 'angular-expo.appspot.com'
-    // messagingSenderId: '197890464790',
-    // appId: '1:197890464790:web:b672a510c3a1e3da44e937',
-    // measurementId: 'G-JRR3YMLGBT'
+    apiKey: "AIzaSyBRvmqcjCpSvkVae97AfGNKQFxtNd9p428",
+    authDomain: "app-bike-store.firebaseapp.com",
+    databaseURL: "https://app-bike-store-default-rtdb.firebaseio.com",
+    projectId: "app-bike-store",
+    storageBucket: "app-bike-store.appspot.com",
+    //messagingSenderId: "222481546663",
+    //appId: "1:222481546663:web:3e855c3da4952743d40a82",
+    //measurementId: "G-5CQBZ7RSL2"
   }
 };

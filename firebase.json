@@ -3,8 +3,12 @@
     "rules": "database.rules.json"
   },
   "hosting": {
-    "public": "dist/angular-expo",
-    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+    "public": "dist/bike-store",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
     "rewrites": [
       {
         "source": "**",
