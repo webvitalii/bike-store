@@ -1,0 +1,24 @@
+Build a simple web application for a bike store owner to manage his inventory.
+
+Minimum functionality.
+- Ability to Create, Read, Update, Delete bikes
+- View a list of bikes
+- Display bike properties: description, rating, price, qty, type, etc. (a photo for bonus points)
+- Connect to and display any API (your choice). Example: Display weather
+
+Feel free to use any technologies that you see fit (in addition to Angular).
+
+Bonus points will be given for styling, user experience, data access work.
+
+Push the finished project into a git repository and send us the link to the repo. Put any installation/setup instructions in a README.md file. Also, publish the project and send a link to the hosted site.
+
+Since we'll be working remotely, a brief screen recorded video walkthrough of this project will be helpful.
+
+If you have any questions, feel free to reach out. We look forward to seeing what you come up with.
+
+============
+
+Todo:
+* create new DB
+* create website
+* create demo video
