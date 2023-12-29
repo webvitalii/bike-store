@@ -1,8 +1,8 @@
 # Angular Expo
 
-https://bike-store.web.app/
+https://app-bike-store.web.app/
 
-https://bike-store.firebaseapp.com/
+https://app-bike-store.firebaseapp.com/
 
 https://github/webvitalii/bike-store
 

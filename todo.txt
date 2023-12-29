@@ -22,3 +22,13 @@ Todo:
 * create new DB
 * create website
 * create demo video
+
+++++++++++++++++++++
+
+Demo URL:
+https://app-bike-store.web.app/
+
+https://app-bike-store.firebaseapp.com/
+
+Github with the code:
+https://github/webvitalii/bike-store

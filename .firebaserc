@@ -1,5 +1,8 @@
 {
   "projects": {
-    "default": "bike-store"
-  }
+    "default": "bike-store",
+    "app-bike-store": "app-bike-store"
+  },
+  "targets": {},
+  "etags": {}
 }

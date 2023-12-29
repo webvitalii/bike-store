@@ -1,3 +1,22 @@
+<ul nz-menu nzTheme="dark" nzMode="horizontal">
+  <li nz-menu-item>
+    <a
+      routerLink="/posts"
+      routerLinkActive="fx-menu__link--active"
+      [routerLinkActiveOptions]="{ exact: true }"
+      >Posts</a
+    >
+  </li>
+  <li nz-menu-item>
+    <a
+      routerLink="/admin/posts"
+      routerLinkActive="fx-menu__link--active"
+      >Admin posts</a
+    >
+  </li>
+</ul>
+
+<!--
 <ul class="fx-menu">
   <li>
     <a
@@ -22,3 +41,4 @@
     >
   </li>
 </ul>
+-->
