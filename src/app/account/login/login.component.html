@@ -18,47 +18,31 @@
     [formGroup]="formLogin"
     novalidate>
     <div class="mb-3">
-      <mat-form-field appearance="outline">
-        <mat-label>Email</mat-label>
-        <input
-          matInput
-          formControlName="email" />
-        <mat-icon
-          matSuffix
-          class="secondary-text"
-          >mail</mat-icon
-        >
-        <mat-error *ngIf="formLogin.get('email').hasError('required')"> Email is required </mat-error>
-        <mat-error *ngIf="!formLogin.get('email').hasError('required') && formLogin.get('email').hasError('email')">
-          Please enter a valid email address
-        </mat-error>
-      </mat-form-field>
+      <label>Email</label>
+      <input
+        matInput
+        formControlName="email" />
+      <p *ngIf="formLogin.get('email').hasError('required')"> Email is required </p>
+      <p *ngIf="!formLogin.get('email').hasError('required') && formLogin.get('email').hasError('email')">
+        Please enter a valid email address
+      </p>
     </div>
 
     <div class="mb-3">
-      <mat-form-field appearance="outline">
-        <mat-label>Password</mat-label>
-        <input
-          matInput
-          type="password"
-          formControlName="password" />
-        <mat-icon
-          matSuffix
-          class="secondary-text"
-          >vpn_key</mat-icon
-        >
-        <mat-error *ngIf="formLogin.get('password').hasError('required')"> Password is required </mat-error>
-        <mat-error *ngIf="!formLogin.get('password').hasError('required') && formLogin.get('password').hasError('minlength')">
-          {{ formLogin.get('password').getError('minlength').requiredLength }} symbols minimum.
-          {{ formLogin.get('password').getError('minlength').actualLength }} symbols entered.
-        </mat-error>
-      </mat-form-field>
+      <label>Password</label>
+      <input
+        matInput
+        type="password"
+        formControlName="password" />
+      <p *ngIf="formLogin.get('password').hasError('required')"> Password is required </p>
+      <p *ngIf="!formLogin.get('password').hasError('required') && formLogin.get('password').hasError('minlength')">
+        {{ formLogin.get('password').getError('minlength').requiredLength }} symbols minimum.
+        {{ formLogin.get('password').getError('minlength').actualLength }} symbols entered.
+      </p>
     </div>
 
     <div class="mb-3">
       <button
-        mat-raised-button
-        color="primary"
         class="submit-button"
         (click)="onLogin()"
         [disabled]="formLogin.invalid">

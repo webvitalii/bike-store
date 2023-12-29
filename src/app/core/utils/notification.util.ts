@@ -1,9 +1,8 @@
 import { Injectable } from '@angular/core';
-import { MatLegacySnackBar as MatSnackBar } from '@angular/material/legacy-snack-bar';
 
 @Injectable({ providedIn: 'root' })
 export class NotificationUtil {
-  constructor(private matSnackBar: MatSnackBar) {}
+  constructor() {}
 
   open(message: string, options = {}): void {
     const optionsDefault = {
@@ -13,6 +12,6 @@ export class NotificationUtil {
       ...optionsDefault,
       ...options
     };
-    this.matSnackBar.open(message, 'Close', optionsMerged);
+    //this.matSnackBar.open(message, 'Close', optionsMerged);
   }
 }
