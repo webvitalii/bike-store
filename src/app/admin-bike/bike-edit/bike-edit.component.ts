@@ -43,7 +43,10 @@ export class BikeEditComponent implements OnInit, OnDestroy {
         ...this.bikeItem,
         title: $event?.title,
         desc: $event?.desc,
-        image: $event?.image
+        image: $event?.image,
+        bikeType: $event?.bikeType,
+        price: $event?.price,
+        qty: $event?.qty
       })
       .pipe(takeUntil(this.unsubscribe$))
       .subscribe(() => {

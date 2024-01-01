@@ -1,5 +1,8 @@
-<section class="bg-light p-3 rounded">
-  <h3 class="text-center mb-3">Login</h3>
+<section class="login-wrap">
+  <div class="text-center">
+    <h3 nz-typography>Login</h3>
+  </div>
+  
 
   <div
     class="alert alert-danger"
@@ -14,107 +17,55 @@
   </div>
 
   <form
-    name="loginForm"
+    nz-form
+    name="formLogin"
     [formGroup]="formLogin"
     novalidate>
-    <div class="mb-3">
-      <label>Email</label>
-      <input
-        matInput
-        formControlName="email" />
-      <p *ngIf="formLogin.get('email').hasError('required')"> Email is required </p>
-      <p *ngIf="!formLogin.get('email').hasError('required') && formLogin.get('email').hasError('email')">
-        Please enter a valid email address
-      </p>
-    </div>
 
-    <div class="mb-3">
-      <label>Password</label>
-      <input
-        matInput
-        type="password"
-        formControlName="password" />
-      <p *ngIf="formLogin.get('password').hasError('required')"> Password is required </p>
-      <p *ngIf="!formLogin.get('password').hasError('required') && formLogin.get('password').hasError('minlength')">
-        {{ formLogin.get('password').getError('minlength').requiredLength }} symbols minimum.
-        {{ formLogin.get('password').getError('minlength').actualLength }} symbols entered.
-      </p>
-    </div>
-
-    <div class="mb-3">
-      <button
-        class="submit-button"
-        (click)="onLogin()"
-        [disabled]="formLogin.invalid">
-        LOGIN
-      </button>
-    </div>
-  </form>
-
-  <!--
-  <form novalidate [formGroup]="formLogin" (ngSubmit)="onLogin()">
-
-    <div class="row mb-3">
-      <div class="col-4">
-        <label for="inputEmailId" class="form-label">Email</label>
-      </div>
-      <div class="col-8">
+    <nz-form-item nz-row>
+      <nz-form-label
+        nzFor="email"
+        nzRequired
+        nz-col nzSpan="6">
+        Email
+      </nz-form-label>
+      <nz-form-control [nzErrorTip]="'Required'" nzHasFeedback>
         <input
-          type="text"
-          class="form-control"
-          id="inputEmailId"
           formControlName="email"
-          [ngClass]="{
-                  'is-valid': formLogin.controls.email.valid && formLogin.controls.email.touched,
-                  'is-invalid': formLogin.controls.email.invalid && formLogin.controls.email.touched
-              }">
-        <div
-          *ngIf="!formLogin.get('email').valid && formLogin.get('email').touched"
-          class="invalid-feedback">Email is required.</div>
-        <div
-          *ngIf="formLogin.get('email').errors?.email"
-          class="invalid-feedback">Email is not valid.</div>
-      </div>
-    </div>
+          nz-input
+          nzSize="large" />
+      </nz-form-control>
+    </nz-form-item>
 
-    <div class="row mb-3">
-      <div class="col-4">
-        <label for="inputPasswordId" class="form-label">Password</label>
-      </div>
-      <div class="col-8">
+
+    <nz-form-item nz-row>
+      <nz-form-label
+        nzFor="password"
+        nzRequired
+        nz-col nzSpan="6">
+        Password
+      </nz-form-label>
+      <nz-form-control [nzErrorTip]="'Required'" nzHasFeedback>
         <input
-          type="text"
-          class="form-control"
-          id="inputPasswordId"
+          type="password"
           formControlName="password"
-          [ngClass]="{
-                  'is-valid': formLogin.controls.password.valid && formLogin.controls.password.touched,
-                  'is-invalid': formLogin.controls.password.invalid && formLogin.controls.password.touched
-              }">
-        <div
-          *ngIf="!formLogin.get('password').valid && formLogin.get('password').touched"
-          class="invalid-feedback">Password is required.</div>
-        <div
-          *ngIf="formLogin.get('password').errors?.minlength"
-          class="invalid-feedback">{{ formLogin.get('password').errors?.minlength.requiredLength }}
-          symbols minimum.
-          {{ formLogin.get('password').errors?.minlength.actualLength }} symbols entered.</div>
+          nz-input
+          nzSize="large" />
+      </nz-form-control>
+    </nz-form-item>
 
-      </div>
-    </div>
+    <nz-form-item nz-row>
+      <nz-col nzSpan="6"></nz-col>
+      <nz-form-control>
+        <button 
+          nz-button 
+          nzType="primary" 
+          [disabled]="formLogin.invalid" 
+          nzSize="large" 
+          (click)="onLogin()">Submit</button>
+      </nz-form-control>
+    </nz-form-item>
 
-    <div class="row mb-3">
-      <div class="col-4"></div>
-      <div class="col-8">
-        <button
-          type="submit"
-          class="btn btn-primary btn-lg"
-          [disabled]="formLogin.invalid || formSubmitting"
-        >Login</button>
-      </div>
-    </div>
   </form>
--->
 
-  <pre>{{ formLogin.value | json }}</pre>
 </section>

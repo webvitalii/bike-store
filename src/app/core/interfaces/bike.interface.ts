@@ -4,4 +4,7 @@ export interface BikeInterface {
   desc: string;
   image: string;
   date: Date;
+  bikeType: string;
+  price: number;
+  qty: number;
 }

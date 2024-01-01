@@ -29,10 +29,12 @@
       Description
     </nz-form-label>
     <nz-form-control [nzErrorTip]="'Required'" nzHasFeedback>
-      <input
+      <textarea
         formControlName="desc"
         nz-input
-        nzSize="large" />
+        nzSize="large"
+        rows="6"
+      ></textarea>
     </nz-form-control>
   </nz-form-item>
 
@@ -51,7 +53,56 @@
     </nz-form-control>
   </nz-form-item>
 
-  <nz-form-item>
+  <nz-form-item nz-row>
+    <nz-form-label
+      nzFor="bikeType"
+      nzRequired
+      nz-col nzSpan="6">
+      Bike Type
+    </nz-form-label>
+    <nz-form-control [nzErrorTip]="'Required'" nzHasFeedback>
+      <nz-select formControlName="bikeType" nzSize="large" placeholder="Select Bike Type">
+        <nz-option *ngFor="let type of bikeTypes" [nzLabel]="type.value" [nzValue]="type.key"></nz-option>
+      </nz-select>
+    </nz-form-control>
+  </nz-form-item>
+
+  <nz-form-item nz-row>
+    <nz-form-label
+      nzFor="price"
+      nzRequired
+      nz-col nzSpan="6">
+      Price
+    </nz-form-label>
+    <nz-form-control [nzErrorTip]="'Required'" nzHasFeedback>
+      <nz-input-number
+        formControlName="price"
+        nzSize="large"
+        [nzMin]="0"
+        [nzStep]="1"
+      ></nz-input-number>
+    </nz-form-control>
+  </nz-form-item>
+
+  <nz-form-item nz-row>
+    <nz-form-label
+      nzFor="qty"
+      nzRequired
+      nz-col nzSpan="6">
+      Quantity
+    </nz-form-label>
+    <nz-form-control [nzErrorTip]="'Required'" nzHasFeedback>
+      <nz-input-number
+        formControlName="qty"
+        nzSize="large"
+        [nzMin]="0"
+        [nzStep]="1"
+      ></nz-input-number>
+    </nz-form-control>
+  </nz-form-item>
+
+  <nz-form-item nz-row>
+    <nz-col nzSpan="6"></nz-col>
     <nz-form-control>
       <button nz-button nzType="primary" [disabled]="form.invalid" nzSize="large">Submit</button>
     </nz-form-control>
