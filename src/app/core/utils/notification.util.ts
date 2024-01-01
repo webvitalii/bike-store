@@ -1,17 +1,19 @@
 import { Injectable } from '@angular/core';
+import { NzNotificationService } from 'ng-zorro-antd/notification';
 
 @Injectable({ providedIn: 'root' })
 export class NotificationUtil {
-  constructor() {}
+  constructor(private nzNotificationService: NzNotificationService) {}
 
   open(message: string, options = {}): void {
     const optionsDefault = {
-      duration: 5000
+      nzDuration: 5000
     };
     const optionsMerged = {
       ...optionsDefault,
       ...options
     };
     //this.matSnackBar.open(message, 'Close', optionsMerged);
+    this.nzNotificationService.blank(message, '', optionsMerged);
   }
 }

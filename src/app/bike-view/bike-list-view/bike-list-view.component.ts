@@ -10,7 +10,6 @@ import { BikeService } from '@app/core/services/bike.service';
 })
 export class PostsComponent implements OnInit {
   bikes$: Observable<BikeInterface[]>;
-  bikeTypes = this.bikeService.bikeTypes;
 
   constructor(public bikeService: BikeService) {}
 

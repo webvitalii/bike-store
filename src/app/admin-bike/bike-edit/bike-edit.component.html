@@ -1,16 +1,24 @@
 
-<h3 nz-typography>Update bike</h3>
+<nz-row nzType="flex" nzJustify="space-between" nzAlign="middle" class="mb-4">
+  <nz-col>
+    <h3 nz-typography>Update bike</h3>
+  </nz-col>
+  <nz-col>
+    <button 
+    nz-button 
+    nzType="primary"
+    nzDanger
+    nzSize="large"
+    nz-popconfirm
+    nzPopconfirmTitle="Are you sure you want to delete this bike?"
+    (nzOnConfirm)="deleteBike()">Delete Bike</button>
+  </nz-col>
+</nz-row>
 
-<p>
-  <a
-    class="btn btn-secondary"
-    [routerLink]="['/admin', 'bikes', 'list']">
-    List
-  </a>
-</p>
 
 <ng-container *ngIf="bikeItem?.id">
   <app-bike-form
     [postInput]="bikeItem"
     (formSubmitEvent)="processFormData($event)"></app-bike-form>
+
 </ng-container>

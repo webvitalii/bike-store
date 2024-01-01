@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { ActivatedRoute, ParamMap } from '@angular/router';
+import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { switchMap } from 'rxjs/operators';
 import { Subject, takeUntil } from 'rxjs';
 import { NotificationUtil } from '@core/utils/notification.util';
@@ -16,7 +16,8 @@ export class BikeEditComponent implements OnInit, OnDestroy {
 
   private unsubscribe$ = new Subject<void>();
 
-  constructor(private activatedRoute: ActivatedRoute, 
+  constructor(private activatedRoute: ActivatedRoute,
+    private router: Router,
     private bikeService: BikeService, 
     private notificationUtil: NotificationUtil) {
       if (this.activatedRoute.snapshot.queryParamMap.get('action') === 'create') {
@@ -51,6 +52,16 @@ export class BikeEditComponent implements OnInit, OnDestroy {
       .pipe(takeUntil(this.unsubscribe$))
       .subscribe(() => {
         this.notificationUtil.open('Updated successfully');
+      });
+  }
+
+  deleteBike(): void {
+    this.bikeService
+      .remove(this.bikeItem.id)
+      .pipe(takeUntil(this.unsubscribe$))
+      .subscribe(() => {
+        this.notificationUtil.open('Deleted successfully');
+        this.router.navigate(['/admin', 'bikes']);
       });
   }
 

@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { NzAlertModule } from 'ng-zorro-antd/alert';
 import { NzAutocompleteModule } from 'ng-zorro-antd/auto-complete';
-import { NzBadgeModule } from 'ng-zorro-antd/badge';
 import { NzBreadCrumbModule } from 'ng-zorro-antd/breadcrumb';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzCardModule } from 'ng-zorro-antd/card';
@@ -51,7 +50,6 @@ const antModules = [
   NzCardModule,
   NzTableModule,
   NzTypographyModule,
-  NzBadgeModule,
   NzSpinModule,
   NzPageHeaderModule,
   NzBreadCrumbModule,

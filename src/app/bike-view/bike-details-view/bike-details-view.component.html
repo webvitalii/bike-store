@@ -1,16 +1,28 @@
 <section *ngIf="bike$ | async as bike">
-  <div class="bike">
-    <h1>{{ bike.title }}</h1>
+  
+  <nz-card [nzCover]="coverTemplate" class="custom-card">
+    <nz-card-meta 
+      [nzTitle]="titleTemplate"
+      [nzDescription]="subTitleTemplate">
+      <ng-template #titleTemplate>
+        <h1 nz-typography>{{ bike.title }}</h1>
+      </ng-template>
+      <ng-template #subTitleTemplate>
+        <h5 nz-typography>{{ bikeService.getBikeTypeName(bike.bikeType) }}</h5>
+      </ng-template>
+    </nz-card-meta>
 
-    <div class="post-meta">
-      <strong>{{ bike.date | date: 'medium' }}</strong>
+    <ng-template #coverTemplate>
+      <img alt="Bike Image" src="{{ bike.image }}" style="width: 100%" />
+    </ng-template>
+
+    <h5 nz-typography>Price: ${{ bike.price }}</h5>
+
+    <h5 nz-typography>Quantity: {{ bike.qty }}</h5>
+
+    <div>
+      <p>{{ bike.desc }}</p>
     </div>
+  </nz-card>
 
-    <div class="post-content">
-      <p>{{ bike.image }}</p>
-      <img src="{{ bike.image }}" alt="Bike Image">
-
-      {{ bike.desc }}
-    </div>
-  </div>
 </section>
