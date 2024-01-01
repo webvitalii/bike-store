@@ -1,8 +1,16 @@
 # Angular Expo
 
+Install dependencies using: `npm install`
+
+Start the app using: `ng serve`
+
+Demo URL:
+
 https://app-bike-store.web.app/
 
 https://app-bike-store.firebaseapp.com/
+
+Code:
 
 https://github/webvitalii/bike-store
 

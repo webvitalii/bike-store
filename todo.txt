@@ -10,7 +10,8 @@ Feel free to use any technologies that you see fit (in addition to Angular).
 
 Bonus points will be given for styling, user experience, data access work.
 
-Push the finished project into a git repository and send us the link to the repo. Put any installation/setup instructions in a README.md file. Also, publish the project and send a link to the hosted site.
+Push the finished project into a git repository and send us the link to the repo. 
+Put any installation/setup instructions in a README.md file. Also, publish the project and send a link to the hosted site.
 
 Since we'll be working remotely, a brief screen recorded video walkthrough of this project will be helpful.
 
@@ -18,17 +19,48 @@ If you have any questions, feel free to reach out. We look forward to seeing wha
 
 ============
 
-Todo:
-* create new DB
-* create website
-* create demo video
+Hi Noah,
 
-++++++++++++++++++++
+I created the Angular website as per requirements.
 
 Demo URL:
 https://app-bike-store.web.app/
-
+OR
 https://app-bike-store.firebaseapp.com/
 
 Github with the code:
 https://github/webvitalii/bike-store
+
+
+To login and explore the Angular admin panel you can use these credentials:
+email: demo@demo.com
+password: d3m0p@ssw0rd
+
+I was not able to find free Weather API so I added section "Online users" in the sidebar homepage with API call to 3rd party service.
+
+The screen recording is stored here:
+https://www.dropbox.com/scl/fi/fay1uk20pd8rx9o8nyp5e/recording-2024-01-01.mp4?rlkey=8bmd8pgyoenkp6knh4mv5syqf&dl=0
+
+Please let me know if you have any questions or suggestions.
+
+Looking forward to hearing from you,
+Vitalii
+
+================
+
+Bike data:
+
+1) https://www.chainreactioncycles.com/p/vitus-mythique-27-vrs-mountain-bike
+https://cdn.media.amplience.net/i/wigglecrc/106231487-img-01-c1131?w=1080&h=1080&sm=clamp
+
+2) https://www.chainreactioncycles.com/p/nukeproof-digger-comp-alloy-bike
+https://cdn.media.amplience.net/i/wigglecrc/106255905-img-01-c1012?w=1080&h=1080&sm=clamp
+
+3) https://www.chainreactioncycles.com/p/orro-gold-evo-7000-fsa-r800-road-bike-2023
+https://cdn.media.amplience.net/i/wigglecrc/106130748-img-01-c3111?w=1080&h=1080&sm=clamp
+
+4) https://www.chainreactioncycles.com/p/kinesis-lyfe-city-e-bike
+https://cdn.media.amplience.net/i/wigglecrc/721233878_img_c1021_96986c806c8146af91837699ce33a372?w=1080&h=1080&sm=clamp
+
+5) https://www.chainreactioncycles.com/p/cube-hyde-trekking-city-bike-2023
+https://cdn.media.amplience.net/i/wigglecrc/113088508-img-01?w=1080&h=1080&sm=clamp
