@@ -1,60 +1,59 @@
 
-<form 
+<form
+  nz-form
+  [nzLayout]="'horizontal'"
   novalidate
   [formGroup]="form"
   (ngSubmit)="submit()">
-  <div>
-    <label
-      for="inputTitleId"
-      class="form-label"
-      >Title</label
-    >
-  </div>
-  <div class="mb-3">
-    <input
-      type="text"
-      class="form-control"
-      id="inputTitleId"
-      formControlName="title"
-      [ngClass]="{
-        'is-valid': form.get('title')?.valid && form.get('title')?.touched,
-        'is-invalid': form.get('title')?.invalid && form.get('title')?.touched
-      }" />
-    <div
-      *ngIf="!form.get('title')?.valid && form.get('title')?.touched"
-      class="invalid-feedback">
-      Title is required.
-    </div>
-  </div>
 
-  <div>
-    <label
-      for="inputTextId"
-      class="form-label"
-      >Text</label
-    >
-  </div>
-  <div class="mb-3">
-    <input
-      type="text"
-      class="form-control"
-      id="inputTextId"
-      formControlName="desc"
-      [ngClass]="{
-        'is-valid': form.get('desc')?.valid && form.get('desc')?.touched,
-        'is-invalid': form.get('desc')?.invalid && form.get('desc')?.touched
-      }" />
-    <div
-      *ngIf="!form.get('desc')?.valid && form.get('desc')?.touched"
-      class="invalid-feedback">
-      Desc is required.
-    </div>
-  </div>
+  <nz-form-item nz-row>
+    <nz-form-label
+      nzFor="title"
+      nzRequired
+      nz-col nzSpan="6">
+      Title
+    </nz-form-label>
+    <nz-form-control [nzErrorTip]="'Required'" nzHasFeedback>
+      <input
+        formControlName="title"
+        nz-input
+        nzSize="large" />
+    </nz-form-control>
+  </nz-form-item>
 
-  <button
-    type="submit"
-    class="btn btn-lg btn-primary"
-    [disabled]="form.invalid">
-    Submit
-  </button>
+  <nz-form-item nz-row>
+    <nz-form-label
+      nzFor="desc"
+      nzRequired
+      nz-col nzSpan="6">
+      Description
+    </nz-form-label>
+    <nz-form-control [nzErrorTip]="'Required'" nzHasFeedback>
+      <input
+        formControlName="desc"
+        nz-input
+        nzSize="large" />
+    </nz-form-control>
+  </nz-form-item>
+
+  <nz-form-item nz-row>
+    <nz-form-label
+      nzFor="image"
+      nzRequired
+      nz-col nzSpan="6">
+      Image URL
+    </nz-form-label>
+    <nz-form-control [nzErrorTip]="'Required'" nzHasFeedback>
+      <input
+        formControlName="image"
+        nz-input
+        nzSize="large" />
+    </nz-form-control>
+  </nz-form-item>
+
+  <nz-form-item>
+    <nz-form-control>
+      <button nz-button nzType="primary" [disabled]="form.invalid" nzSize="large">Submit</button>
+    </nz-form-control>
+  </nz-form-item>
 </form>

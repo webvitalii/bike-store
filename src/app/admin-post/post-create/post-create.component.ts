@@ -24,6 +24,7 @@ export class PostCreateComponent implements OnInit, OnDestroy {
     const post: BikeInterface = {
       title: $event?.title,
       desc: $event?.desc,
+      image: $event?.image,
       date: new Date()
     };
 

@@ -42,7 +42,8 @@ export class PostEditComponent implements OnInit, OnDestroy {
       .update({
         ...this.postItem,
         title: $event?.title,
-        desc: $event?.desc
+        desc: $event?.desc,
+        image: $event?.image
       })
       .pipe(takeUntil(this.unsubscribe$))
       .subscribe(() => {
