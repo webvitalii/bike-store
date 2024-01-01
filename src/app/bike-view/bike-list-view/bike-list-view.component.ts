@@ -4,16 +4,16 @@ import { BikeInterface } from '@app/core/interfaces/bike.interface';
 import { BikeService } from '@app/core/services/bike.service';
 
 @Component({
-  selector: 'app-posts',
-  templateUrl: './posts.component.html',
-  styleUrls: ['./posts.component.scss']
+  selector: 'app-bike-list-view',
+  templateUrl: './bike-list-view.component.html',
+  styleUrls: ['./bike-list-view.component.scss']
 })
 export class PostsComponent implements OnInit {
-  posts$: Observable<BikeInterface[]>;
+  bikes$: Observable<BikeInterface[]>;
 
-  constructor(public postService: BikeService) {}
+  constructor(public bikeService: BikeService) {}
 
   ngOnInit(): void {
-    this.posts$ = this.postService.getAll();
+    this.bikes$ = this.bikeService.getAll();
   }
 }

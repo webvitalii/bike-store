@@ -1,0 +1,11 @@
+<article
+  *ngFor="let bike of bikes$ | async"
+  class="card">
+  <div class="card-body">
+    <h4>
+      <a [routerLink]="['/bikes', bike.id]">{{ bike.title }}</a>
+    </h4>
+
+    <div>{{ bike.desc }}</div>
+  </div>
+</article>

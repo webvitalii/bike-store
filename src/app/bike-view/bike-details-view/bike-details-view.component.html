@@ -1,0 +1,16 @@
+<section *ngIf="bike$ | async as bike">
+  <div class="bike">
+    <h1>{{ bike.title }}</h1>
+
+    <div class="post-meta">
+      <strong>{{ bike.date | date: 'medium' }}</strong>
+    </div>
+
+    <div class="post-content">
+      <p>{{ bike.image }}</p>
+      <img src="{{ bike.image }}" alt="Bike Image">
+
+      {{ bike.desc }}
+    </div>
+  </div>
+</section>

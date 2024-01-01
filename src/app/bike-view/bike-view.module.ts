@@ -1,16 +1,16 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { BIKE_VIEW_ROUTE } from './bike-view.route';
 
 import { SharedModule } from '@shared/shared.module';
-import { LayoutComponent } from './components/layout/layout.component';
-import { PostsComponent } from './components/posts/posts.component';
-import { PostComponent } from './components/post/post.component';
+import { PostsComponent } from './bike-list-view/bike-list-view.component';
+import { PostComponent } from './bike-details-view/bike-details-view.component';
 
 const routesCMS: Routes = [
   {
     path: '',
-    component: LayoutComponent,
+    component: PostsComponent,
     children: [
       // { path: '', redirectTo: '/', pathMatch: 'full' },
       { path: '', component: PostsComponent },
@@ -20,8 +20,8 @@ const routesCMS: Routes = [
 ];
 
 @NgModule({
-  imports: [CommonModule, RouterModule.forChild(routesCMS), SharedModule],
+  imports: [CommonModule, RouterModule.forChild(BIKE_VIEW_ROUTE), SharedModule],
   exports: [RouterModule],
-  declarations: [LayoutComponent, PostsComponent, PostComponent]
+  declarations: [PostsComponent, PostComponent]
 })
-export class CMSModule {}
+export class BikeViewModule {}

@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { CMSModule } from '@app/cms/cms.module';
+import { BikeViewModule } from '@app/bike-view/bike-view.module';
 import { AuthGuard } from '@core/guards/auth.guard';
 import { AccountModule } from '@app/account/account.module';
 import { CMSAdminModule } from '@app/cms-admin/cms-admin.module';
@@ -9,18 +9,9 @@ import { ErrorComponent } from './components/error/error.component';
 import { AdminBikeModule } from './admin-bike/admin-bike.module';
 
 const routes: Routes = [
-  // { path: '', component: HomeComponent },
-  // { path: '', redirectTo: '/home', pathMatch: 'full' },
-  /* {
-    path: '', component: LayoutComponent, children: [
-      { path: '', redirectTo: '/', pathMatch: 'full' },
-      { path: '', component: PostsComponent },
-      { path: 'post/:id', component: PostComponent }
-    ]
-  }, */
   {
-    path: 'posts',
-    loadChildren: () => CMSModule
+    path: 'bikes',
+    loadChildren: () => BikeViewModule
   },
   {
     path: 'account',
