@@ -9,31 +9,20 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./bike-list.component.scss']
 })
 export class BikeListComponent implements OnInit, OnDestroy {
-  posts: BikeInterface[] = [];
-  postSub: Subscription;
-  deleteSub: Subscription;
+  bikes: BikeInterface[] = [];
+  bikeSub: Subscription;
 
-  constructor(private postService: BikeService) {}
+  constructor(public bikeService: BikeService) {}
 
   ngOnInit() {
-    this.postSub = this.postService.getAll().subscribe((posts) => {
-      this.posts = posts;
-    });
-  }
-
-  remove(id: string) {
-    this.deleteSub = this.postService.remove(id).subscribe(() => {
-      this.posts = this.posts.filter((post) => post.id !== id);
+    this.bikeSub = this.bikeService.getAll().subscribe((bikes) => {
+      this.bikes = bikes;
     });
   }
 
   ngOnDestroy() {
-    if (this.postSub) {
-      this.postSub.unsubscribe();
-    }
-
-    if (this.deleteSub) {
-      this.deleteSub.unsubscribe();
+    if (this.bikeSub) {
+      this.bikeSub.unsubscribe();
     }
   }
 }

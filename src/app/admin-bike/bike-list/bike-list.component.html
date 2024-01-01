@@ -1,42 +1,48 @@
 <section>
 
-  <p>
-    <a
-      class="btn btn-secondary"
-      [routerLink]="['/admin', 'bikes', 'create']">
-      Create
-    </a>
-  </p>
+  <nz-row nzType="flex" nzJustify="space-between" nzAlign="middle" class="mb-4">
+    <nz-col>
+      <h3 nz-typography>Bike list</h3>
+    </nz-col>
+    <nz-col>
+      <a 
+        nz-button 
+        nzType="primary"
+        nzSize="large"
+        [routerLink]="['/admin', 'bikes', 'create']">Create Bike</a>
+    </nz-col>
+  </nz-row>
 
-  <table
-    class="table"
-    *ngIf="posts?.length > 0">
+  <nz-table 
+    *ngIf="bikes?.length > 0"
+    [nzData]="bikes"
+    nzBordered
+    nzSize="middle">
+
     <thead>
       <tr>
-        <th>#</th>
         <th>Title</th>
-        <th>Date</th>
+        <th>Type</th>
+        <th>Price</th>
+        <th>Qty</th>
         <th>Action</th>
       </tr>
     </thead>
+
     <tbody>
-      <tr *ngFor="let bike of posts; let idx = index">
-        <td>{{ idx + 1 }}</td>
+      <tr *ngFor="let bike of bikes">
         <td>{{ bike.title }}</td>
-        <td>{{ bike.date | date: 'medium' }}</td>
+        <td>{{ bikeService.getBikeTypeName(bike.bikeType) }}</td>
+        <td>{{ bike.price }}</td>
+        <td>{{ bike.qty }}</td>
         <td>
-          <a
-            class="btn btn-secondary"
-            [routerLink]="['/admin', 'bikes', bike.id, 'edit']">
-            Edit
-          </a>
-          <button
-            class="btn btn-danger"
-            (click)="remove(bike.id)">
-            Delete
-          </button>
+          <a 
+            nz-button 
+            nzType="primary" 
+            [routerLink]="['/admin', 'bikes', bike.id, 'edit']">Edit</a>
         </td>
       </tr>
     </tbody>
-  </table>
+
+  </nz-table>
 </section>

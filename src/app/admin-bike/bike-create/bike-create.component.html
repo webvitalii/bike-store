@@ -1,12 +1,5 @@
 <h3 nz-typography>Create bike</h3>
 
-<p>
-  <a
-    class="btn btn-secondary"
-    [routerLink]="['/admin', 'bikes', 'list']">
-    List
-  </a>
-</p>
 
 <app-bike-form
   (formSubmitEvent)="processFormData($event)"></app-bike-form>
