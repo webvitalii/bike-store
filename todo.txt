@@ -29,14 +29,14 @@ OR
 https://app-bike-store.firebaseapp.com/
 
 Github with the code:
-https://github/webvitalii/bike-store
+https://github.com/webvitalii/bike-store
 
 
 To login and explore the Angular admin panel you can use these credentials:
 email: demo@demo.com
 password: d3m0p@ssw0rd
 
-I was not able to find free Weather API so I added section "Online users" in the sidebar homepage with API call to 3rd party service.
+I was not able to find a free Weather API so I added the section "Online users" in the sidebar homepage with API call to 3rd party service.
 
 The screen recording is stored here:
 https://www.dropbox.com/scl/fi/fay1uk20pd8rx9o8nyp5e/recording-2024-01-01.mp4?rlkey=8bmd8pgyoenkp6knh4mv5syqf&dl=0
