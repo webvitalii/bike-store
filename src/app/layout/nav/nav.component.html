@@ -14,7 +14,7 @@
       >Admin bikes</a
     >
   </li>
-  <li nz-menu-item>
+  <li nz-menu-item *ngIf="authService.isAuthenticated()">
     <a
       routerLink="/account/logout"
       routerLinkActive="link--active"
