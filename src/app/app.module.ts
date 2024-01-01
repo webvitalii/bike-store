@@ -13,7 +13,7 @@ import { CoreModule } from '@core/core.module';
 import { SharedModule } from '@shared/shared.module';
 
 import { ErrorComponent } from '@shared/components/error/error.component';
-import { AuthInterceptor } from './cms-admin/services/auth.interceptor';
+import { AuthInterceptor } from '@core/interceptors/auth.interceptor';
 import { NetworkInterceptor } from '@core/interceptors/network.interceptor';
 
 import { MainComponent } from './layout/main/main.component';
