@@ -3,11 +3,11 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { BikeInterface } from '@app/core/interfaces/bike.interface';
 
 @Component({
-  selector: 'app-post-form',
-  templateUrl: './post-form.component.html',
-  styleUrls: ['./post-form.component.scss']
+  selector: 'app-bike-form',
+  templateUrl: './bike-form.component.html',
+  styleUrls: ['./bike-form.component.scss']
 })
-export class PostFormComponent implements OnInit {
+export class BikeFormComponent implements OnInit {
   @Input() postInput: BikeInterface;
   @Output() formSubmitEvent = new EventEmitter<BikeInterface>();
 

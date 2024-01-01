@@ -5,11 +5,11 @@ import { BikeService } from '@app/core/services/bike.service';
 import { BikeInterface } from '@app/core/interfaces/bike.interface';
 
 @Component({
-  selector: 'app-post-create',
-  templateUrl: './post-create.component.html',
-  styleUrls: ['./post-create.component.scss']
+  selector: 'app-bike-create',
+  templateUrl: './bike-create.component.html',
+  styleUrls: ['./bike-create.component.scss']
 })
-export class PostCreateComponent implements OnInit, OnDestroy {
+export class BikeCreateComponent implements OnInit, OnDestroy {
   postItem: BikeInterface;
 
   private unsubscribe$ = new Subject<void>();

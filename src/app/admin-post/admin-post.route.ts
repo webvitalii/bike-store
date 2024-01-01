@@ -1,7 +1,7 @@
 import { Routes } from '@angular/router';
-import { POST_LIST_ROUTE } from './post-list/post-list.route';
-import { POST_CREATE_ROUTE } from './post-create/post-create.route';
-import { POST_EDIT_ROUTE } from './post-edit/post-edit.route';
+import { BIKE_LIST_ROUTE } from './bike-list/bike-list.route';
+import { BIKE_CREATE_ROUTE } from './bike-create/bike-create.route';
+import { BIKE_EDIT_ROUTE } from './bike-edit/bike-edit.route';
 
 export const ADMIN_POST_ROUTE: Routes = [
   {
@@ -12,9 +12,9 @@ export const ADMIN_POST_ROUTE: Routes = [
         redirectTo: 'list',
         pathMatch: 'full'
       },
-      ...POST_LIST_ROUTE,
-      ...POST_CREATE_ROUTE,
-      ...POST_EDIT_ROUTE
+      ...BIKE_LIST_ROUTE,
+      ...BIKE_CREATE_ROUTE,
+      ...BIKE_EDIT_ROUTE
     ]
   }
 ];

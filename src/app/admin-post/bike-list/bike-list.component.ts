@@ -4,11 +4,11 @@ import { BikeInterface } from '@app/core/interfaces/bike.interface';
 import { Subscription } from 'rxjs';
 
 @Component({
-  selector: 'app-post-list',
-  templateUrl: './post-list.component.html',
-  styleUrls: ['./post-list.component.scss']
+  selector: 'app-bike-list',
+  templateUrl: './bike-list.component.html',
+  styleUrls: ['./bike-list.component.scss']
 })
-export class PostListComponent implements OnInit, OnDestroy {
+export class BikeListComponent implements OnInit, OnDestroy {
   posts: BikeInterface[] = [];
   postSub: Subscription;
   deleteSub: Subscription;
