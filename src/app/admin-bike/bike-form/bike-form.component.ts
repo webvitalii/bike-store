@@ -13,6 +13,7 @@ export class BikeFormComponent implements OnInit {
   @Output() formSubmitEvent = new EventEmitter<BikeInterface>();
 
   bikeTypes = this.bikeService.bikeTypes;
+  ratings = [1, 2, 3, 4, 5];
 
   form: FormGroup;
 
@@ -26,6 +27,7 @@ export class BikeFormComponent implements OnInit {
       bikeType: new FormControl('', Validators.required),
       price: new FormControl('', [Validators.required, Validators.min(0)]),
       qty: new FormControl('', [Validators.required, Validators.min(1)]),
+      rating: new FormControl('', [Validators.required, Validators.min(1)])
     });
 
     if (this.postInput?.id) {

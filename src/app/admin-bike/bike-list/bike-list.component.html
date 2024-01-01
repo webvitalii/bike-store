@@ -9,7 +9,7 @@
         nz-button 
         nzType="primary"
         nzSize="large"
-        [routerLink]="['/admin', 'bikes', 'create']">Create Bike</a>
+        [routerLink]="['/admin', 'bikes', 'create']">Add Bike</a>
     </nz-col>
   </nz-row>
 
@@ -25,6 +25,7 @@
         <th>Type</th>
         <th>Price</th>
         <th>Qty</th>
+        <th>Rating</th>
         <th>Action</th>
       </tr>
     </thead>
@@ -32,9 +33,14 @@
     <tbody>
       <tr *ngFor="let bike of bikes">
         <td>{{ bike.title }}</td>
-        <td>{{ bikeService.getBikeTypeName(bike.bikeType) }}</td>
+        <td>
+          {{ bikeService.getBikeTypeName(bike.bikeType) }}
+        </td>
         <td>{{ bike.price }}</td>
         <td>{{ bike.qty }}</td>
+        <td>
+          <nz-rate [ngModel]="bike.rating" nzDisabled></nz-rate>
+        </td>
         <td>
           <a 
             nz-button 

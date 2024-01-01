@@ -1,18 +1,40 @@
-<section class="card-container">
 
-  <nz-card
-    *ngFor="let bike of bikes$ | async"
-    class="card-item card-item-no-border"
-    nzHoverable 
-    style="width:400px" 
-    [nzCover]="coverTemplate" 
-    [routerLink]="['/bikes', bike.id]">
-    <nz-card-meta 
-      [nzTitle]="bike.title" 
-      [nzDescription]="bikeService.getBikeTypeName(bike.bikeType)"></nz-card-meta>
-    <ng-template #coverTemplate>
-      <img alt="Bike Image" src="{{ bike.image }}" />
-    </ng-template>
-  </nz-card>
+<nz-layout>
 
-</section>
+  <nz-layout>
+    <section class="card-container">
+      <nz-card
+        *ngFor="let bike of bikes$ | async"
+        class="card-item card-item-no-border"
+        nzHoverable
+        [nzCover]="coverTemplate"
+        [routerLink]="['/bikes', bike.id]"
+      >
+        <nz-card-meta
+          [nzTitle]="bike.title"
+          [nzDescription]="bikeService.getBikeTypeName(bike.bikeType)"
+        ></nz-card-meta>
+        <ng-template #coverTemplate>
+          <img alt="Bike Image" src="{{ bike.image }}" />
+        </ng-template>
+      </nz-card>
+    </section>
+  </nz-layout>
+
+  <nz-sider nzWidth="200px" nzTheme="light">
+    <!-- Users online sidebar -->
+    <nz-card *ngIf="usersOnline" nzTitle="Users Online" nzBordered>
+      <nz-list *ngFor="let user of usersOnline.slice(0, 3)">
+        <nz-list-item>
+          <nz-list-item-meta
+            [nzAvatar]="user.avatar"
+            [nzTitle]="user.name"
+            [nzDescription]="user.username"
+          ></nz-list-item-meta>
+        </nz-list-item>
+      </nz-list>
+    </nz-card>
+  </nz-sider>
+
+
+</nz-layout>

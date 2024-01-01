@@ -28,7 +28,8 @@ export class BikeCreateComponent implements OnInit, OnDestroy {
       date: new Date(),
       bikeType: $event?.bikeType,
       price: $event?.price, 
-      qty: $event?.qty
+      qty: $event?.qty,
+      rating: $event?.rating
     };
 
     this.bikeService.create(bike)

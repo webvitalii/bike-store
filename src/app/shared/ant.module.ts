@@ -23,6 +23,7 @@ import { NzNotificationModule } from 'ng-zorro-antd/notification';
 import { NzPageHeaderModule } from 'ng-zorro-antd/page-header';
 import { NzPopconfirmModule } from 'ng-zorro-antd/popconfirm';
 import { NzProgressModule } from 'ng-zorro-antd/progress';
+import { NzRateModule } from 'ng-zorro-antd/rate';
 import { NzRadioModule } from 'ng-zorro-antd/radio';
 import { NzResultModule } from 'ng-zorro-antd/result';
 import { NzSelectModule } from 'ng-zorro-antd/select';
@@ -44,6 +45,7 @@ const antModules = [
   NzUploadModule,
   NzButtonModule,
   NzInputModule,
+  NzRateModule,
   NzRadioModule,
   NzTagModule,
   NzIconModule,

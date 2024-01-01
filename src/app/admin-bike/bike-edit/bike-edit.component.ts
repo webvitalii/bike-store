@@ -47,7 +47,8 @@ export class BikeEditComponent implements OnInit, OnDestroy {
         image: $event?.image,
         bikeType: $event?.bikeType,
         price: $event?.price,
-        qty: $event?.qty
+        qty: $event?.qty,
+        rating: $event?.rating
       })
       .pipe(takeUntil(this.unsubscribe$))
       .subscribe(() => {

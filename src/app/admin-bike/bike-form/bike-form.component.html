@@ -102,6 +102,20 @@
   </nz-form-item>
 
   <nz-form-item nz-row>
+    <nz-form-label
+      nzFor="rating"
+      nzRequired
+      nz-col nzSpan="6">
+      Rating
+    </nz-form-label>
+    <nz-form-control [nzErrorTip]="'Required'" nzHasFeedback>
+      <nz-select formControlName="rating" nzSize="large" placeholder="Select Rating">
+        <nz-option *ngFor="let rating of ratings" [nzLabel]="rating" [nzValue]="rating"></nz-option>
+      </nz-select>
+    </nz-form-control>
+  </nz-form-item>
+
+  <nz-form-item nz-row>
     <nz-col nzSpan="6"></nz-col>
     <nz-form-control>
       <button nz-button nzType="primary" [disabled]="form.invalid" nzSize="large">Submit</button>

@@ -7,4 +7,5 @@ export interface BikeInterface {
   bikeType: string;
   price: number;
   qty: number;
+  rating: number;
 }
