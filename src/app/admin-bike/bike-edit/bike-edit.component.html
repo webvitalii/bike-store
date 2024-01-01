@@ -4,13 +4,13 @@
 <p>
   <a
     class="btn btn-secondary"
-    [routerLink]="['/admin', 'posts', 'list']">
+    [routerLink]="['/admin', 'bikes', 'list']">
     List
   </a>
 </p>
 
-<ng-container *ngIf="postItem?.id">
+<ng-container *ngIf="bikeItem?.id">
   <app-bike-form
-    [postInput]="postItem"
+    [postInput]="bikeItem"
     (formSubmitEvent)="processFormData($event)"></app-bike-form>
 </ng-container>

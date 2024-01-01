@@ -6,7 +6,7 @@ import { AccountModule } from '@app/account/account.module';
 import { CMSAdminModule } from '@app/cms-admin/cms-admin.module';
 import { HomeComponent } from './components/home/home.component';
 import { ErrorComponent } from './components/error/error.component';
-import { AdminPostModule } from './admin-post/admin-post.module';
+import { AdminBikeModule } from './admin-bike/admin-bike.module';
 
 const routes: Routes = [
   // { path: '', component: HomeComponent },
@@ -31,8 +31,8 @@ const routes: Routes = [
     canActivate: [AuthGuard],
     children: [
       {
-        path: 'posts',
-        loadChildren: () => AdminPostModule
+        path: 'bikes',
+        loadChildren: () => AdminBikeModule
       }
     ]
   },

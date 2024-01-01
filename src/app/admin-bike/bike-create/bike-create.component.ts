@@ -10,34 +10,34 @@ import { BikeInterface } from '@app/core/interfaces/bike.interface';
   styleUrls: ['./bike-create.component.scss']
 })
 export class BikeCreateComponent implements OnInit, OnDestroy {
-  postItem: BikeInterface;
+  bikeItem: BikeInterface;
 
   private unsubscribe$ = new Subject<void>();
 
   constructor(public router: Router, 
-    private postService: BikeService) {}
+    private bikeService: BikeService) {}
 
   ngOnInit() {
   }
 
   processFormData($event: any) {
-    const post: BikeInterface = {
+    const bike: BikeInterface = {
       title: $event?.title,
       desc: $event?.desc,
       image: $event?.image,
       date: new Date()
     };
 
-    this.postService.create(post)
+    this.bikeService.create(bike)
       .pipe(takeUntil(this.unsubscribe$))
       .subscribe({
-        next:(postResponse) => {
+        next:(bikeResponse) => {
           const routerExtras = {
             queryParams: {
               action: 'create'
             }
           };
-          this.router.navigate(['/admin', 'posts', postResponse?.id, 'edit'], routerExtras);
+          this.router.navigate(['/admin', 'bikes', bikeResponse?.id, 'edit'], routerExtras);
         }
       });
   }

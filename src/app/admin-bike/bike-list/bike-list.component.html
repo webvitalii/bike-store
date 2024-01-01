@@ -3,7 +3,7 @@
   <p>
     <a
       class="btn btn-secondary"
-      [routerLink]="['/admin', 'posts', 'create']">
+      [routerLink]="['/admin', 'bikes', 'create']">
       Create
     </a>
   </p>
@@ -20,19 +20,19 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let post of posts; let idx = index">
+      <tr *ngFor="let bike of posts; let idx = index">
         <td>{{ idx + 1 }}</td>
-        <td>{{ post.title }}</td>
-        <td>{{ post.date | date: 'medium' }}</td>
+        <td>{{ bike.title }}</td>
+        <td>{{ bike.date | date: 'medium' }}</td>
         <td>
           <a
             class="btn btn-secondary"
-            [routerLink]="['/admin', 'posts', post.id, 'edit']">
+            [routerLink]="['/admin', 'bikes', bike.id, 'edit']">
             Edit
           </a>
           <button
             class="btn btn-danger"
-            (click)="remove(post.id)">
+            (click)="remove(bike.id)">
             Delete
           </button>
         </td>

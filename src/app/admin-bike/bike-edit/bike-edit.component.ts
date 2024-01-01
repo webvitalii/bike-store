@@ -12,7 +12,7 @@ import { BikeInterface } from '@app/core/interfaces/bike.interface';
   styleUrls: ['./bike-edit.component.scss']
 })
 export class BikeEditComponent implements OnInit, OnDestroy {
-  postItem: BikeInterface;
+  bikeItem: BikeInterface;
 
   private unsubscribe$ = new Subject<void>();
 
@@ -32,15 +32,15 @@ export class BikeEditComponent implements OnInit, OnDestroy {
         })
       )
       .pipe(takeUntil(this.unsubscribe$))
-      .subscribe((post: BikeInterface) => {
-        this.postItem = post;
+      .subscribe((bike: BikeInterface) => {
+        this.bikeItem = bike;
       });
   }
 
   processFormData($event: any) {
     this.bikeService
       .update({
-        ...this.postItem,
+        ...this.bikeItem,
         title: $event?.title,
         desc: $event?.desc,
         image: $event?.image

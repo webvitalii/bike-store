@@ -9,7 +9,7 @@ const routesAdmin: Routes = [
     path: '',
     component: LayoutAdminComponent,
     children: [
-      { path: '', redirectTo: '/admin/posts', pathMatch: 'full' },
+      { path: '', redirectTo: '/admin/bikes', pathMatch: 'full' },
     ]
   }
 ];
