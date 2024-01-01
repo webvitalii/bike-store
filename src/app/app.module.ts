@@ -12,8 +12,7 @@ import { AuthGuard } from '@core/guards/auth.guard';
 import { CoreModule } from '@core/core.module';
 import { SharedModule } from '@shared/shared.module';
 
-import { ErrorComponent } from './components/error/error.component';
-import { HomeComponent } from './components/home/home.component';
+import { ErrorComponent } from '@shared/components/error/error.component';
 import { AuthInterceptor } from './cms-admin/services/auth.interceptor';
 import { NetworkInterceptor } from '@core/interceptors/network.interceptor';
 
@@ -27,7 +26,6 @@ registerLocaleData(en);
 @NgModule({
   declarations: [
     ErrorComponent,
-    HomeComponent,
     MainComponent,
     NavComponent,
     HeaderComponent,

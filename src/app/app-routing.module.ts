@@ -4,8 +4,7 @@ import { BikeViewModule } from '@app/bike-view/bike-view.module';
 import { AuthGuard } from '@core/guards/auth.guard';
 import { AccountModule } from '@app/account/account.module';
 import { CMSAdminModule } from '@app/cms-admin/cms-admin.module';
-import { HomeComponent } from './components/home/home.component';
-import { ErrorComponent } from './components/error/error.component';
+import { ErrorComponent } from '@shared/components/error/error.component';
 import { AdminBikeModule } from './admin-bike/admin-bike.module';
 
 const routes: Routes = [
@@ -31,7 +30,6 @@ const routes: Routes = [
     path: 'admin',
     loadChildren: () => CMSAdminModule
   },
-  { path: 'home', component: HomeComponent },
   { path: 'not-found', component: ErrorComponent, data: { message: 'Page Not Found' } },
   { path: '**', redirectTo: 'not-found' }
 ];
