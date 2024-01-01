@@ -46,7 +46,7 @@ export class LoginComponent implements OnInit {
       (response) => {
         console.log(response);
         this.formLogin.reset();
-        this.router.navigate(['/admin']);
+        this.router.navigate(['/admin', 'bikes']);
         this.formSubmitting = false;
       },
       () => {

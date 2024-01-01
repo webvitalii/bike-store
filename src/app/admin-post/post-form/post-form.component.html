@@ -39,15 +39,15 @@
       type="text"
       class="form-control"
       id="inputTextId"
-      formControlName="text"
+      formControlName="desc"
       [ngClass]="{
-        'is-valid': form.get('text')?.valid && form.get('text')?.touched,
-        'is-invalid': form.get('text')?.invalid && form.get('text')?.touched
+        'is-valid': form.get('desc')?.valid && form.get('desc')?.touched,
+        'is-invalid': form.get('desc')?.invalid && form.get('desc')?.touched
       }" />
     <div
-      *ngIf="!form.get('text')?.valid && form.get('text')?.touched"
+      *ngIf="!form.get('desc')?.valid && form.get('desc')?.touched"
       class="invalid-feedback">
-      Text is required.
+      Desc is required.
     </div>
   </div>
 

@@ -3,8 +3,8 @@ import { ActivatedRoute, ParamMap } from '@angular/router';
 import { switchMap } from 'rxjs/operators';
 import { Subject, takeUntil } from 'rxjs';
 import { NotificationUtil } from '@core/utils/notification.util';
-import { PostService } from '@core/services/post.service';
-import { PostInterface } from '@core/interfaces/post.interface';
+import { BikeService } from '@app/core/services/bike.service';
+import { BikeInterface } from '@app/core/interfaces/bike.interface';
 
 @Component({
   selector: 'app-post-edit',
@@ -12,12 +12,12 @@ import { PostInterface } from '@core/interfaces/post.interface';
   styleUrls: ['./post-edit.component.scss']
 })
 export class PostEditComponent implements OnInit, OnDestroy {
-  postItem: PostInterface;
+  postItem: BikeInterface;
 
   private unsubscribe$ = new Subject<void>();
 
   constructor(private activatedRoute: ActivatedRoute, 
-    private postService: PostService, 
+    private postService: BikeService, 
     private notificationUtil: NotificationUtil) {
       if (this.activatedRoute.snapshot.queryParamMap.get('action') === 'create') {
         this.notificationUtil.open('Created successfully');
@@ -32,7 +32,7 @@ export class PostEditComponent implements OnInit, OnDestroy {
         })
       )
       .pipe(takeUntil(this.unsubscribe$))
-      .subscribe((post: PostInterface) => {
+      .subscribe((post: BikeInterface) => {
         this.postItem = post;
       });
   }
@@ -41,8 +41,8 @@ export class PostEditComponent implements OnInit, OnDestroy {
     this.postService
       .update({
         ...this.postItem,
-        text: $event?.text,
-        title: $event?.title
+        title: $event?.title,
+        desc: $event?.desc
       })
       .pipe(takeUntil(this.unsubscribe$))
       .subscribe(() => {

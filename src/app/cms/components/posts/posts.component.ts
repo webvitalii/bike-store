@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { PostInterface } from '@core/interfaces/post.interface';
-import { PostService } from '@core/services/post.service';
+import { BikeInterface } from '@app/core/interfaces/bike.interface';
+import { BikeService } from '@app/core/services/bike.service';
 
 @Component({
   selector: 'app-posts',
@@ -9,9 +9,9 @@ import { PostService } from '@core/services/post.service';
   styleUrls: ['./posts.component.scss']
 })
 export class PostsComponent implements OnInit {
-  posts$: Observable<PostInterface[]>;
+  posts$: Observable<BikeInterface[]>;
 
-  constructor(public postService: PostService) {}
+  constructor(public postService: BikeService) {}
 
   ngOnInit(): void {
     this.posts$ = this.postService.getAll();

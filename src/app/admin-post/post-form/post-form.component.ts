@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { PostInterface } from '@core/interfaces/post.interface';
+import { BikeInterface } from '@app/core/interfaces/bike.interface';
 
 @Component({
   selector: 'app-post-form',
@@ -8,8 +8,8 @@ import { PostInterface } from '@core/interfaces/post.interface';
   styleUrls: ['./post-form.component.scss']
 })
 export class PostFormComponent implements OnInit {
-  @Input() postInput: PostInterface;
-  @Output() formSubmitEvent = new EventEmitter<PostInterface>();
+  @Input() postInput: BikeInterface;
+  @Output() formSubmitEvent = new EventEmitter<BikeInterface>();
 
   form: FormGroup;
 
@@ -18,7 +18,7 @@ export class PostFormComponent implements OnInit {
   ngOnInit() {
     this.form = new FormGroup({
       title: new FormControl('', Validators.required),
-      text: new FormControl('', Validators.required)
+      desc: new FormControl('', Validators.required)
     });
 
     if (this.postInput?.id) {

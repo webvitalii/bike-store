@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, ParamMap } from '@angular/router';
 import { Observable } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
-import { PostInterface } from '@core/interfaces/post.interface';
-import { PostService } from '@core/services/post.service';
+import { BikeInterface } from '@app/core/interfaces/bike.interface';
+import { BikeService } from '@app/core/services/bike.service';
 
 @Component({
   selector: 'app-post',
@@ -11,9 +11,9 @@ import { PostService } from '@core/services/post.service';
   styleUrls: ['./post.component.scss']
 })
 export class PostComponent implements OnInit {
-  post$: Observable<PostInterface>;
+  post$: Observable<BikeInterface>;
 
-  constructor(private activatedRoute: ActivatedRoute, private postService: PostService) {}
+  constructor(private activatedRoute: ActivatedRoute, private postService: BikeService) {}
 
   ngOnInit(): void {
     this.post$ = this.activatedRoute.paramMap.pipe(

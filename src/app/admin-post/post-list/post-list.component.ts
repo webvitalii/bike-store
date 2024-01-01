@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { PostService } from '@core/services/post.service';
-import { PostInterface } from '@core/interfaces/post.interface';
+import { BikeService } from '@app/core/services/bike.service';
+import { BikeInterface } from '@app/core/interfaces/bike.interface';
 import { Subscription } from 'rxjs';
 
 @Component({
@@ -9,11 +9,11 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./post-list.component.scss']
 })
 export class PostListComponent implements OnInit, OnDestroy {
-  posts: PostInterface[] = [];
+  posts: BikeInterface[] = [];
   postSub: Subscription;
   deleteSub: Subscription;
 
-  constructor(private postService: PostService) {}
+  constructor(private postService: BikeService) {}
 
   ngOnInit() {
     this.postSub = this.postService.getAll().subscribe((posts) => {

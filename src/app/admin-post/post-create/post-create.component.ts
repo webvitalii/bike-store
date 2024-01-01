@@ -1,8 +1,8 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Subject, takeUntil } from 'rxjs';
-import { PostService } from '@core/services/post.service';
-import { PostInterface } from '@core/interfaces/post.interface';
+import { BikeService } from '@app/core/services/bike.service';
+import { BikeInterface } from '@app/core/interfaces/bike.interface';
 
 @Component({
   selector: 'app-post-create',
@@ -10,20 +10,20 @@ import { PostInterface } from '@core/interfaces/post.interface';
   styleUrls: ['./post-create.component.scss']
 })
 export class PostCreateComponent implements OnInit, OnDestroy {
-  postItem: PostInterface;
+  postItem: BikeInterface;
 
   private unsubscribe$ = new Subject<void>();
 
   constructor(public router: Router, 
-    private postService: PostService) {}
+    private postService: BikeService) {}
 
   ngOnInit() {
   }
 
   processFormData($event: any) {
-    const post: PostInterface = {
+    const post: BikeInterface = {
       title: $event?.title,
-      text: $event?.text,
+      desc: $event?.desc,
       date: new Date()
     };
 

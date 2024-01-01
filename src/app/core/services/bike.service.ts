@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { PostInterface } from '@core/interfaces/post.interface';
+import { BikeInterface } from '@app/core/interfaces/bike.interface';
 import { environment } from '@env/environment';
 
 export interface FirebaseCreateResponse {
@@ -12,11 +12,11 @@ export interface FirebaseCreateResponse {
 @Injectable({
   providedIn: 'root'
 })
-export class PostService {
+export class BikeService {
 
   constructor(private http: HttpClient) {}
 
-  create(post: PostInterface): Observable<PostInterface> {
+  create(post: BikeInterface): Observable<BikeInterface> {
     return this.http.post(`${environment.firebaseConfig.databaseURL}/bikes.json`, post).pipe(
       map((response: FirebaseCreateResponse) => {
         return {
@@ -28,7 +28,7 @@ export class PostService {
     );
   }
 
-  getAll(): Observable<PostInterface[]> {
+  getAll(): Observable<BikeInterface[]> {
     return this.http.get(`${environment.firebaseConfig.databaseURL}/bikes.json`).pipe(
       map((response: { [key: string]: any }) => {
         return Object.keys(response).map((key) => ({
@@ -40,9 +40,9 @@ export class PostService {
     );
   }
 
-  getById(id: string): Observable<PostInterface> {
-    return this.http.get<PostInterface>(`${environment.firebaseConfig.databaseURL}/bikes/${id}.json`).pipe(
-      map((post: PostInterface) => {
+  getById(id: string): Observable<BikeInterface> {
+    return this.http.get<BikeInterface>(`${environment.firebaseConfig.databaseURL}/bikes/${id}.json`).pipe(
+      map((post: BikeInterface) => {
         return {
           ...post,
           id,
@@ -56,8 +56,8 @@ export class PostService {
     return this.http.delete<void>(`${environment.firebaseConfig.databaseURL}/bikes/${id}.json`);
   }
 
-  update(post: PostInterface): Observable<PostInterface> {
-    return this.http.patch<PostInterface>(`${environment.firebaseConfig.databaseURL}/bikes/${post.id}.json`, post);
+  update(post: BikeInterface): Observable<BikeInterface> {
+    return this.http.patch<BikeInterface>(`${environment.firebaseConfig.databaseURL}/bikes/${post.id}.json`, post);
   }
 
 }
