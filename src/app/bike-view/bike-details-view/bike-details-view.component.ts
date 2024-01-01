@@ -12,8 +12,9 @@ import { BikeService } from '@app/core/services/bike.service';
 })
 export class PostComponent implements OnInit {
   bike$: Observable<BikeInterface>;
+  bikeTypes = this.bikeService.bikeTypes;
 
-  constructor(private activatedRoute: ActivatedRoute, private bikeService: BikeService) {}
+  constructor(private activatedRoute: ActivatedRoute, public bikeService: BikeService) {}
 
   ngOnInit(): void {
     this.bike$ = this.activatedRoute.paramMap.pipe(

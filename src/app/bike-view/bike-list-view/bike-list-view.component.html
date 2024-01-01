@@ -1,7 +1,23 @@
-<article
-  *ngFor="let bike of bikes$ | async"
-  class="card">
-  <div class="card-body">
+<section class="card-container">
+
+  <nz-card
+    *ngFor="let bike of bikes$ | async"
+    class="card-item"
+    nzHoverable 
+    style="width:400px" 
+    [nzCover]="coverTemplate" 
+    [routerLink]="['/bikes', bike.id]">
+    <nz-card-meta 
+      [nzTitle]="bike.title" 
+      [nzDescription]="bikeService.getBikeTypeName(bike.bikeType)"></nz-card-meta>
+    <ng-template #coverTemplate>
+      <img alt="Bike Image" src="{{ bike.image }}" />
+    </ng-template>
+  </nz-card>
+  
+
+  <!--
+  <div nz-card-body>
     <h4>
       <a [routerLink]="['/bikes', bike.id]">{{ bike.title }}</a>
     </h4>
@@ -9,5 +25,14 @@
     <div>{{ bike.desc }}</div>
 
     <img src="{{ bike.image }}" alt="Bike Image">
+
+    <div>{{ bike.price }}</div>
+
+    <div>{{ bike.qty }}</div>
+
+
+    <div>Bike Type: {{ bikeService.getBikeTypeName(bike.bikeType) }}</div>
   </div>
-</article>
+  -->
+
+</section>

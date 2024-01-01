@@ -13,6 +13,13 @@ export interface FirebaseCreateResponse {
   providedIn: 'root'
 })
 export class BikeService {
+  bikeTypes = [
+    { key: 'road', value: 'Road Bike' },
+    { key: 'mountain', value: 'Mountain Bike' },
+    { key: 'hybrid', value: 'Hybrid Bike' },
+    { key: 'cruiser', value: 'Cruiser Bike' },
+    { key: 'electric', value: 'Electric Bike' },
+  ];
 
   constructor(private http: HttpClient) {}
 
@@ -58,6 +65,11 @@ export class BikeService {
 
   update(post: BikeInterface): Observable<BikeInterface> {
     return this.http.patch<BikeInterface>(`${environment.firebaseConfig.databaseURL}/bikes/${post.id}.json`, post);
+  }
+
+  getBikeTypeName(type: string): string {
+    const bikeType = this.bikeTypes.find((t) => t.key === type);
+    return bikeType ? bikeType.value : 'Unknown';
   }
 
 }

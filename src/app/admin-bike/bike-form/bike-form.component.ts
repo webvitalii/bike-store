@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { BikeService } from '@app/core/services/bike.service';
 import { BikeInterface } from '@app/core/interfaces/bike.interface';
 
 @Component({
@@ -11,17 +12,11 @@ export class BikeFormComponent implements OnInit {
   @Input() postInput: BikeInterface;
   @Output() formSubmitEvent = new EventEmitter<BikeInterface>();
 
-  bikeTypes = [
-    { key: 'road', value: 'Road Bike' },
-    { key: 'mountain', value: 'Mountain Bike' },
-    { key: 'hybrid', value: 'Hybrid Bike' },
-    { key: 'cruiser', value: 'Cruiser Bike' },
-    { key: 'electric', value: 'Electric Bike' },
-  ];
+  bikeTypes = this.bikeService.bikeTypes;
 
   form: FormGroup;
 
-  constructor() {}
+  constructor(public bikeService: BikeService) {}
 
   ngOnInit() {
     this.form = new FormGroup({
