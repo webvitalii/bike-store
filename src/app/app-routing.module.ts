@@ -8,6 +8,11 @@ import { AdminBikeModule } from './admin-bike/admin-bike.module';
 
 const routes: Routes = [
   {
+    path: '',
+    redirectTo: 'bikes',
+    pathMatch: 'full'
+  },
+  {
     path: 'bikes',
     loadChildren: () => BikeViewModule
   },
